@@ -1,0 +1,243 @@
+1)what is oops and important of oops?
+
+*It is a programming technique
+*all objects are grouped into classes in oops
+*oops intergrated with real world concept into programming such as inheritance ,polymorphism and Encapsulation
+
+important:
+*it is used for reuse of code using inheritance
+*and it used for hidding the data using abstraction
+
+2)What is class
+
+*Class is objects blueprint or template and it is an user defined datatype
+*Inside class we can declare variables and methods etcc...
+
+what is object
+
+*object is basically instance of class they can acess variables and methods
+ex:in one dogs class as different breeds pitbull and lab  and different property in dog class
+
+
+3)what is pure oops? why java is not pure oop
+
+*pure oops support feature that treat everythings in the program as an object
+there is no primitive datatypes such as Integer etcc..
+*In java we can store in java using primitive data type
+*In addition static allows u to use classes without using object so it is not an pure oops in java
+
+4)What is difference between inheritance and polymorphism
+
+INHERITANCE: 
+*one derived class inherits the alredy existing class fetures
+*inheritance refers to using the structure and behaviour of parent class in subclass
+*inheritance support code reusablity and reduce line of code
+*inheritance does not support multiple inheritance in java 
+ 
+POLYMORPHISM:
+*polymorphism allows class methods to exist in multiple forms
+*polymorphism intend on changing the behaviour of parents class method
+*has 2 type compile time-method overloading and run time-method overriding polymorphism
+*it decide which form of function should be invoked
+
+5)why multiple inheritance not support in java
+*we cant use two parent class and java compiler can't decide which class method should be inherited
+
+6)what is encapsulation
+* it is process of binding data member and methods of program together to do specfic job without revealing unnecessary detail
+*It has two concept DATA BINDING and DATA HIDDING
+Data Hiding :
+*Hiding the unwanted processor information from normal users
+Data Binding:
+*Bind the data member and the methods together as whole
+
+Abstract is hiding the unnecessary data and encapsulation is to hide the code and data in single entity getting the value using getter and setting the value by setter
+
+7)What is abstraction
+*Abstraction is the method of hiding the unncessary details from the necessary ones.
+ex we only need to drive car not about the wires in the car
+
+8)cann class inherits the constructor of its base class?
+*it inherits only state and behaviour in the form of variable and method from superclass bu it does not inherit constructor of super class constructor is special because constructor has same class name to the constructor name 
+
+9)Abstract class different from interface
+* Both contains method declaration not implementation
+* when an INTERFACE is implemented the subclass must define in subclass all its method and provide implementation
+* when an abstract clas is inherited the subclass does not need to provide the ???dout...
+
+10)Constructor chaining?
+*constructor chaining is sequence of invoking constructor of the same class upon intializing an object
+
+11)What is fundamental difference between abstraction and Encapsulation
+*Abstraction is about expressing external simplicity
+*Ex:Hiding Everything Except tv screen and contol pannel
+
+*Encapsulation is about hiding internal complexity
+Ex:Hiding Details of Televsion component circuit all the wire and all enginnering works
+
+12)What is constructor and destructor?
+CONSTRUCTOR:
+*It is block of code same as method but it dont have return type
+*Constructor is invoked when instance of class or object is created is created
+*At time of calling constructor memory for object is allocated in memory space
+*Constructor and className is same
+
+DESTRUCTOR:
+*It is last function that is called before an object destroy
+
+13)What is composition?
+
+*Compostion is way of design or implementation of has-a relationship
+*has-a relationship is used to implement the instance variable that refer to another object
+*Example:vechile is-a relationship to the electric car has-a relationship to the engin
+
+14)copy constructor and Assignment operator
+
+*Both is used intialize one object using another object
+*COPY constructor allocate seperate memory to both the object
+*ASSIGNMENT constructor does not allocate new memory to newly created object
+
+15)What is Exception Handiling?
+
+*Exception is event occurs during the execution of program at runtime causes any execution halt
+*Exception can handle in the program and preventing the excecution of program 
+*It uses TRY-CATCH for handling the exception
+
+16)what is coupling and it is important?
+*It mean that object can change or modify the state of other object directly
+LOOSELY Coupling: It is independent of one another and do not directly modify the state of other object
+TIGHTLY Coupling: It is depend on other and it can modif the state of other object In this case reuse of code is difficult
+
+17)overiding and overloading
+*Method overloading is the concept in oops two method with same name and has different parameter and it is compile time polymorphism
+*Method overriding is the concept same method name and same parameter present in the parent class and child class and it is runtime polymorphism
+
+18)static block will print first or main method statement will print first?
+*Static block will execute first befor compiler or interpreter looks for main method.
+
+
+19)API :
+client request to server goes request server as api recieve request etha database 
+
+20)Axios :
+
+
+
+Abstraction is hiding the details and exposing only the essential and relevant details to user
+Encapsulation is process of wraping the data and methods in single unit is called encapsulation
+The inhertance is a process of obtaining the data member and method from one class to another class 
+the process of representing one form in multiple form is know as polymorphism
+ 
+
+
+inheritance type---------------
+
+single level inheritance
+
+parent
+   ^
+   |
+Child
+
+
+Multilevel Inheritance
+
+Class A
+   ^
+   |
+   |
+Class B
+   ^
+   |
+   |
+Class C
+
+Hierachical INheritance
+
+           Class A
+              |
+-----------------------------
+^                           	
+|                           |
+Class B			Class C
+
+
+Multiple inheritance and it is not supported in java
+
+Class A     Class B
+-------------------
+        |
+       Class C
+
+
+Super keyword
+
+Used to acess the superclass members from the subclass
+
+
+protected class
+protected member in superclass are accessible from the subclass
+
+private member of the super class are not available for subclass
+
+
+final keyword
+classes with final cannot be inherited
+
+Final method
+we cannot override final method
+overloading of final method can be done 
+when u calling the class a method using class name in the sub class then that  method will be copy to the that function in sub class and it performs and it is inline so using final method will improve the performance 
+
+
+Abstract class
+
+1.class contain one or more abstract method
+
+Abstract Method
+
+1.Abstract method doest not have any body
+
+
+Interface
+
+access interface-name{
+returntype method1(paramenter List);
+..
+..
+}
+
+1.one or more class can implement interface
+
+partial Implementation
+
+1. A class is abstract all methods of interface
+
+Nested Interface
+A interface can be declared as a member of class another interface
+
+
+Package 
+1.represents a directory
+2.Contain class and interface
+
+             All classes and interface
+               |
+import java.io.*;
+        |    | 
+  directory Another
+  name      sub
+	    Directory
+	
+3.packages has two types 
+4.Buildin and userdefine
+5.Buildin packages
+@ java.lang
+@ java.io
+@ java.util
+etc....
+
+
+6.Userdefine package
+@ package packageNmae;   //to create a package
+@ package packageName.subPackageName    //to create a sub package

@@ -1,0 +1,245 @@
+NO SQL-Non relational database that uses key-value pairs and it is hierarchical structure
+Non Relational Database- is collection of unstructured data and semi-structured data not stored in tabular form
+No sql types:
+1.key value- Ex:redias
+2.column based - Ex:cassendara
+3.Document based - Ex: Mongodb
+4.Graph based - Ex: neo4
+
+
+MongoDB --------------------------------------------------------------
+Defintion--- It is no sql database stores the large no of data in the form of document . It is flexblity to work with evolving data model .It is JSON form
+Why:---
+1.open source 
+2.high performance
+3.flexbility schema
+4.Advance security
+
+How does mongodb works:
+Mongodb stores data objects in collections and documents instead of the tables and rows used in traditional relation database . collection comprise set of documents which are the basic unit of data table in relational database. document consist of key value pair which are the basic unit of data in mongodb
+
+
+Data Modelling:--------------------------------------------------------
+
+Defintion-:
+	Data modelling is the process of determining how data is stored and what connection exist between various entities in our data
+
+why data model:-
+	Data model helps to create a simplified and optimized logical database eliminate redundancy,reduce storage requirement and enable efficient reterivel
+
+How data modeling work in mongodb:-
+	1.create and design schema
+	2.combine document
+	3.optimization and performance
+three categories of data model:-
+	1.conceputual data model - what the system is to contain with regard to related and build user and stakeholde
+	2.logical data model -how the data will be structured and represent entities
+	3.Physical data model - how data is stored specified database
+Types of relationship in data model:
+
+1.one to one:-- when one field can only have one value 
+2.one to many:-- one field has multiple relationship between the data
+3.many to many:-- when two or more entities within a document can have multiple relationship
+
+
+Types of method create data model
+1.embedded data model :-- embedded document capture relationship between data by storing related in single document
+2.Reference data model :-- relationship between data by including links or reference from one document to another
+
+
+Mongodb operator:----------------------------------------------------------------
+mongodb query operator are simple keyword or special symbol that tells the interpreter how to process logical and mathematical operator
+Syntax:--db.name_of_collection.find({"field name":{$ query_operator_name:"value"}}).pretty();
+
+
+Types of operator:
+1.query and projection operator -comparison,logical,array,element,bitwise,evaluation
+2.update the operator
+3.Aggregation pipeline
+
+
+Comparison operator:---
+$eq -equal
+$nq -notequal
+$lt -less thean
+$gt -greater than
+$gte -greater than equal
+$lte- leass that equal
+
+ex:-- db.collection_name.find({fieldname:{$eq:"Value"}})
+
+Logical operator:---
+$and- returns all when matches in both expression
+$or -returns all when matches in any of the single expression
+$nor -returns all when do not matches in the any single expression
+$not - returns document that do not match the query expression
+
+ex:--- db.collectionName.find({$and :[{fieldName1:"valueMatch"},{fieldName2:"ValueMatch2"}]} 
+it fetches the detail that field1 and field2 matches to the given value will be returned
+
+Element operator:---
+it locate the document based on the fields of document 
+
+$exist --returns the document that have a specific field ex:-- db.collectionName.find(fieldname:{$exist:true,$gt:35})
+$type -- returns the document when it is specified type ex:-- db.collectionName.find(fieldname:{$type:"double"})
+
+Array operator:---
+
+$all -- returns document from collection matches all value in the specified array
+$size -- returns matches an array with the specified no of element in it
+$elemMatch -- returns that matches specified condition within each element in array
+
+ex:--
+db.collectionName.find(FieldArray:{$all:["value1Match","value2Match]}) it returns the if the given value in array contain will return the field
+db.collectionName.find(FieldArray:{$size:4) it returns the that field array contains the 4 value means it returns
+
+
+Update operator:
+$currentDate : it update the current date to field
+$inc - it increments the field value
+$min -it updates only specified value is less than the existing field value
+$max-it updates only specified value is greater than the existing field value
+$mul - it is used multiply the field value
+
+MongoDb regular expression:---------------------------------------------------
+
+Regular expression are used to match pattern in a document
+
+$regex
+
+db.collectionNmae.find(field:{$regex:/pattern/} }
+
+ex: custormer:/ra/ -- it matches the value contain ra in the string
+    paymentMode:{$regex:"ca"} -- in the payment mode that start with the ca in the payment mode field
+    paymentMode:{$regex:"$ok"} -- it return the field string that end with ok
+
+
+MongoDB projection :------------------------------------------------------------
+
+It is unique feature that allows you to select only the necessary data rather than the entities set of data from the document
+
+ex: db.collectionName.find({},{"fieldname":1,"fieldName":1,"_id": 0) it will display the from all the collection only mentioned field it field default shown from collection we dont need that we should mention as 0
+
+
+Limiting and sorting record in mongodb:------------------------------------------
+
+sorting order value 1 is increasing order 
+sorting order value -1 decreasing order
+
+ex:
+db.collectionName.find().sort({field:order})
+db.collectionName.find({},{field:value}).sort({field:order})
+db.collectionName.find().sort({{field:order},{field:order},{field:order,...........}})
+
+Limiting : used to limit the no of record the method takes only one type argument which is no of document to display
+
+db.collectionName.find().limit(value)
+db.collectionName.find({},{field:value}).limit(value) ex.limit(2) only show 2 data from the collection
+
+
+Indexing Mongodb:------------------------------------------------------------------
+
+Defintion:- Indexes provide user with an efficient way of querying data
+we can find the data where there is large data also
+
+why -:1.Avoid collection 
+	2.efficient indexing strategy
+	3.Search efficiency
+
+syntax:
+db.collectionName.createIndex({field_name:1 or -1})
+
+ex:
+db.employee.createIndex({empName:1}) 1 mention that empname in ascending order
+
+Types of Indexes:
+1.single field---------------- 
+It used create the index on the single field of a document
+syntax:
+db.collectionName.createIndex({field_name:1 or -1})
+ex:
+db.employee.createIndex({empName:1}) 1 mention that empname in ascending order
+
+2.compound ----------------
+It holds a reference to multiple field of collections
+
+syntax:
+db.collectionName.createIndex({field_name:1 or -1,field2:type,....})
+ex:
+db.employee.createIndex({empName:1,empid:-1}) 1 mention that empname in ascending order
+
+
+3.multi key
+
+It uses the multikey indexs the value stored in array
+
+db.collection.createIndex({field:type})
+
+
+db.collectionName.getIndexes() It will return the indexes in that collction
+db.collectionName.dropIndexes() it will delete the indexes
+
+
+MongoDB aggregation-------------------------------------------------------------------------------------------------------
+
+Aggregation is the process of selecting data from collection to process multiple document and return computed result
+
+Group values from multiple document together
+
+aggregation pipeline stages
+
+				stage
+				  |
+----------------------------------------------------------------------------
+|                  |	         |             |              |             |
+
+collection -----> $match ----->$groups ------>$sort ------>$projects ---->outputs
+                |                                                    |
+		|----------------------------------------------------|
+					|
+				Aggregation Pipeline
+
+Match is used to match the given data
+Group is used to group the field ex one id to two data it will group the id and return the given field in the data  
+
+
+db.orders.aggregate([{$match:{status:"a"},{$group:{_id:"$cust_id",total:{$sum:"$amount"}}}}
+
+It is used to filter the status a mathing and then by grouping the customer id and add the total field with no of match the customer id and there amount field amount will be summed and returned in the group
+
+
+Operation in the aggreagation $sum $max,min,push,avg ...
+
+another ex: db.employees.aggregate([{$match:{Department_Id:"100"}},{$count:total employees in department 100 is:}]);
+o/p: [{total employees in department 100 is :8}]
+
+
+
+Mongodb replication -------------------------------------------------------------------------------------------------------------
+
+Duplicate the same data across multiple mongodb servers
+
+replication done is shift the data into multiple servers or multiple location data can available each of any server rather than only single side server is stores
+
+Replication set
+1. Mongodb manager replication using replica set which are collection of related mongodb node
+2. A Replication need minimum of three mongodb nodes
+3. one of the node will be considered the primary node that receives all the write operation
+4. the others secondary node will replicate the data from the primary node
+5. if the node is recovered works as secondary node again
+
+
+
+Mongod sharding-------------------------------------------------------------------------------------------------------------------------
+
+Sharding is the data distribution process and stores a single data set into multiple database
+
+1.provide scalablity to data
+
+Add more capacity to single server such as adding more memory and processing units or adding more RAM on the single server
+
+Sharding cluster 
+--> the combination of multiple shard,mongos processes, and configuration servers
+
+mongodb sharding works by creating cluster of mongodb instances consisting of at least three servers
+

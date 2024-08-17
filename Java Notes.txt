@@ -1,0 +1,362 @@
+JAVA---
+Java is a popular programming language, created in 1995.
+
+James Gosling is known as the father of Java
+
+Java is platform-independent because it uses a virtual machine. The Java programming language and all APIs are compiled into bytecodes. Bytecodes are effectively platform-independent.
+
+java code --> compiler --> bytecode
+
+class file 
+    |
+class Loader
+    |
+bytecode verified
+    |
+interpreter
+    |
+runtime 
+    |
+hardware
+
+JVM--
+
+JVM (Java Virtual Machine) is an abstract machine. It is called a virtual machine because it doesn't physically exist. It is a specification that provides a runtime environment in which Java bytecode can be executed. It can also run those programs which are written in other languages and compiled to Java bytecode
+
+Loads code
+Verifies code
+Executes code
+Provides runtime environment
+
+JRE--
+JRE is an acronym for Java Runtime Environment. It is also written as Java RTE. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
+
+JDK--
+JDK is an acronym for Java Development Kit. The Java Development Kit (JDK) is a software development environment which is used to develop Java applications and applets. It physically exists. It contains JRE + development tools.
+
+The JDK contains a private Java Virtual Machine (JVM) and a few other resources such as an interpreter/loader (java), a compiler (javac), an archiver (jar), a documentation generator (Javadoc), etc. to complete the development of a Java Application.
+
+Heap-->It is the runtime data area in which objects are allocated.
+
+Unicode System--
+
+Unicode is a universal international standard character encoding that is capable of representing most of the world's written languages.
+lowest value:\u0000
+highest value:\uFFFF
+
+Java Variables----
+Variables are containers for storing data values.
+
+example:
+String,int,float,char,boolean
+
+Java Identifiers----
+
+All Java variables must be identified with unique names.
+These unique names are called identifiers.
+
+Java Data Types-------
+
+Primitive Data Types--
+byte -1 byte- -128 to 127
+short -2 bytes- -32,768 to 32,767
+int -4 bytes-  -2,147,483,648 to 2,147,483,647
+long -8 bytes-  -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float -4 bytes- Sufficient for storing 6 to 7 decimal digits
+double- 8 bytes- Sufficient for storing 15 decimal digits
+boolean- 1 bit	-true or false
+char -2 bytes -Stores a single character/letter or ASCII values
+
+Non-Primitive Data Types--
+Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java (except for String).
+example:
+Strings, Arrays, Classes, Interface, etc.
+
+Java Type Casting-----
+
+Widening Casting (automatically) ---
+
+converting a smaller type to a larger type size
+byte -> short -> char -> int -> long -> float -> double
+example:
+int myInt = 9;
+double myDouble = myInt; // Automatic casting: int to double
+
+Narrowing Casting (manually) ---
+
+converting a larger type to a smaller size type
+double -> float -> long -> int -> char -> short -> byte
+example:
+double myDouble = 9.78d;
+int myInt = (int) myDouble; // Manual casting: double to int
+
+
+Java Operators---
+
+Arithmetic operators
+Assignment operators
+Comparison operators
+Logical operators
+Bitwise operators
+
+Java Logical Operators
+
+&& -Returns true if both statements are true	
+|| -Returns true if one of the statements 
+! -Reverse the result, returns false if the result is true
+
+
+Java Bitwise operators
+
+<< -The left shift operator moves all bits by a given number of bits to the left. b=a>>n --> b=a*(2pow(n))
+
+
+>> --The right shift operator moves all bits by a given number of bits to the right.
+
+Bitwise AND &
+
+0 0 0
+0 1 0
+1 0 0
+1 1 1
+
+Bitwise exclusive OR ^
+
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+
+Bitwise Inclusive OR |
+
+0 0 0
+0 1 1
+1 0 1
+1 1 1
+
+Bitwise Complement ~
+0 1
+1 0
+ex=1001 -> 0110
+
+Java Strings-----
+
+A String variable contains a collection of characters surrounded by double quotes:
+
+String txt = "We are the so-called \"Vikings\" from";
+o/p-We are the so-called "Vikings" from the north.
+
+The sequence \'  inserts a single quote in a string:
+The sequence \\  inserts a single backslash in a string:
+
+Java Arrays----
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+To declare an array, define the variable type with square brackets
+
+int[] myNum = {10, 20, 30, 40};
+
+Multidimensional Arrays
+int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+
+Java Scope---
+In Java, variables are only accessible inside the region they are created. This is called scope.
+
+Method Scope->
+Variables declared directly inside a method are available anywhere in the method following the line of code in which they were declared:
+
+
+Block Scope->
+A block of code refers to all of the code between curly braces {}.
+
+Variables declared inside blocks of code are only accessible by the code between the curly braces, which follows the line in which the variable was declared:
+
+
+TIME COMPLEXITY--
+Basically, the time complexity of a particular code depends on the given input size, not on the machine used to run the code.
+
+Big O notation-worst case
+Theta notation -average case
+Omega notation -best case
+
+Space Complexity--
+Space complexity generally represents the summation of auxiliary space and the input space. Auxiliary space refers to the space that we use additionally to solve a problem. And input space refers to the space that we use to store the inputs.
+
+
+JAVA COllECTIONS:----
+
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+Java Collections can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.
+
+List Interface--
+
+List interface is the child interface of Collection interface. It inhibits a list type data structure in which we can store the ordered collection of objects. It can have duplicate values.
+
+List <data-type> list1= new ArrayList();  
+List <data-type> list2 = new LinkedList();  
+List <data-type> list3 = new Vector();  
+List <data-type> list4 = new Stack();  
+
+
+@ArrayList-non synchronizes maintain in insertion sort
+@LinkedList-It maintains the insertion order and is not synchronized
+@Vector- It is synchronized and contains many methods that are not the part of Collection framework.
+@Stack-It implements the last-in-first-out data structure,provides its methods like boolean push(), boolean peek(), boolean push(object o),
+
+
+Queue Interface---
+
+Queue interface maintains the first-in-first-out order. It can be defined as an ordered list that is used to hold the elements which are about to be processed. There are various classes like PriorityQueue, Deque, and ArrayDeque which implements the Queue interface
+
+Queue<String> q1 = new PriorityQueue();  
+Queue<String> q2 = new ArrayDeque();  
+
+@PriorityQueue--The PriorityQueue class implements the Queue interface. It holds the elements or objects which are to be processed by their priorities. PriorityQueue doesn't allow null values to be stored in the queue.
+
+@Deque Interface
+Deque interface extends the Queue interface. In Deque, we can remove and add the elements from both the side. Deque stands for a double-ended queue which enables us to perform the operations at both the ends.
+
+@ArrayDeque-ArrayDeque class implements the Deque interface. It facilitates us to use the Deque. Unlike queue, we can add or delete the elements from both the ends.
+ArrayDeque is faster than ArrayList and Stack and has no capacity restrictions.
+
+
+Set Interface:---
+It represents the unordered set of elements which doesn't allow us to store the duplicate items. We can store at most one null value in Set
+
+Set<data-type> s1 = new HashSet<data-type>();  
+Set<data-type> s2 = new LinkedHashSet<data-type>();  
+Set<data-type> s3 = new TreeSet<data-type>();  
+
+HashSet--
+HashSet class implements Set Interface. It represents the collection that uses a hash table for storage. Hashing is used to store the elements in the HashSet. It contains unique items.
+LinkedHashSet--LinkedHashSet class represents the LinkedList implementation of Set Interface
+
+SortedSet Interface---
+SortedSet is the alternate of Set interface that provides a total ordering on its elements. The elements of the SortedSet are arranged in the increasing (ascending) order
+
+TreeSet-
+Java TreeSet class implements the Set interface that uses a tree for storage. Like HashSet, TreeSet also contains unique elements. However, the access and retrieval time of TreeSet is quite fast. The elements in TreeSet stored in ascending order.
+
+Java HashMap---
+Java HashMap class implements the Map interface which allows us to store key and value pair, where keys should be unique. If you try to insert the duplicate key, it will replace the element of the corresponding key
+
+@Java HashMap maintains no order.
+
+HashMap<Integer,String> map=new HashMap<Integer,String>();//Creating HashMap    
+   map.put(1,"Mango");  //Put elements in Map  
+for(Map.Entry m : map.entrySet()){    
+    System.out.println(m.getKey()+" "+m.getValue());    
+   }  
+
+//key-based removal  
+    map.remove(100); 
+    map.replace(102, "Gaurav");  
+
+Difference between HashSet and HashMap
+HashSet contains only values whereas HashMap contains an entry(key and value).
+
+What is Hashing
+It is the process of converting an object into an integer value. The integer value helps in indexing and faster searches.
+
+Java Hashtable class----
+Java Hashtable class implements a hashtable, which maps keys to values. It inherits Dictionary class and implements the Map interface.
+
+  Hashtable<Integer,String> map=new Hashtable<Integer,String>();        
+
+
+HashMap is non synchronized-Hashtable is synchronized.
+HashMap is fast.-Hashtable is slow
+HashMap inherits AbstractMap class.-Hashtable inherits Dictionary class.
+
+
+Array Class--------------------------------------------------------------------------------
+
+Methods
+1.static void sort(array);
+2." void start(array,int start,int end);
+3." int binarySearch(array,element);  --->binary search is performed and array should be in sorted form
+4." Boolean equals(arr1,arr2); --->checks arr1 and arr2 are equal
+5." array copyOf(arr,int n); -->it copy the n value array to another array and return it
+6." void fill(arr,value); --->it fill the entire array with specific value
+
+
+
+vector is similar to arraylist
+vector is synchronized in sequensial manner
+
+
+
+Exception----------------------------------------------------------------------------------
+1.Runtime error is called exception
+2.	Exception
+	    |
+      ---------------	
+     |              |
+    Checked	unchecked
+
+3.Checked:--exception checked at compile time by compiler
+4.unchecked:-- exception checked at run time by JVM
+
+
+Example exceptions
+1.ArrayIndexOutOfBoundIndex
+2.NullPointerException
+3.NoSuchElementsException
+        Exception
+            |
+      -----------------    
+     |                |
+   Build-in          user-define
+
+Build-in Exception---------------------------
+
+1.Arthemetic exception   -->division by 0
+2.ArrayIndexOutofBound Exception
+3.classNotFound Exception   -->trying refer a classname which not existing
+4.FileNotFount Exception    --> requested file is not found
+5.I/O Exception		  -->I/o Operation fails
+6.Interrupt Exception      --->Threads is waiting and sleeping
+7.NoSuchField Exception     --->class doesn"t have any field/variable
+8.NoSuchMethod Exception     --->Method not found
+9.NullPointer Exception      ----> when refering to null object
+10.NumberFormat Exception    ----->when a method could not convert a string into a numeric format
+11.Runtimme Exception        --->Exception occurs at run-time
+12.StringIndexOutofBound Exception ---->When indexes of the string is either negative or out of range
+
+
+User-Define Exception-------------------------
+1.user can also creates their own exception
+2.the user should create a exception class as a sub class to exception class
+Syntax ----> class Myexception extends Exception
+4.The user can write a default constructor
+Syntax-----> Myexception{}
+5.user can create a paramerized constructor with string as parameter
+Syntax ----->MyException(String str){
+		super(str)
+	     }
+
+6.When user want to raise an exception
+
+Mtexception me=new Myexception("Exception detail");
+throw me;
+
+Exeption handiling
+1.try block --- Statement which may lead to exception production an exception are written in try block
+2.catch block ---Statement which are used to handle the exception are written in catch block
+3.finally block --- The statement written inside finally block will be executed
+
+
+
+Throws clause
+-->When programmer does not want to handle the checked exception then they should throw out these exception 
+
+Throw keyword
+---> User can create a custom error using throw keyword
+
+Rethrowing an exception
+---->We can rethrow the exception out from the catch block
+
+A real-life example of a stack can be the Undo/Redo operation in Word or Excel. A real-life example of a queue can be an operating system process scheduling queues.
+
+

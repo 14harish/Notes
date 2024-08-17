@@ -1,0 +1,51 @@
+*In cmd to enter username and email id by the commomnd
+
+git config --global user.name "Enter Name"
+git config --global user.email "Enter Email"
+
+*cloning the git
+
+git clone linkofrepostrty
+git add filename---> this used for untracted file to track
+git status -->checking git status
+git commit -m "Message"
+git push orgin main-->this will push the changes	
+	      |
+    	      |
+              ----> this mention the branch and commited link
+git pull 
+
+
+*New Folder in Local System this to push in new repositry
+
+git init
+git add . will make all untrackerd file to tracked file
+git remote add orgin "paste the link"
+git commit -m "message"
+git branch -->to check that which branch
+git branch -M main -->changing the branchName master to Main
+ 
+
+*switching one branch to another branch
+
+git checkout changing branch name
+
+*Checking the git differnce from working branch from main branch
+
+git diff branchname
+  
+*Merging two branches
+
+git merge branchname
+
+*pull request
+is requesting the main branch by newly created branch to merge the new branch to main branch 
+
+this is done in the github so go to pull request main to which branch and add the message about that file to merge so the main branch can accept and merge the content of new branch in the main branch
+
+
+*conflict
+changing the same file different people in same time git will become confuse
+
+
+     

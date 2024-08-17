@@ -1,0 +1,228 @@
+What is spring boot?
+It is open source framework for building enterprise java application
+Aims to simplfy the complex enterprise java application development on any kind of deployment platform
+
+Spring boot makes it easy to create stand alone production grade spring based application that you can just run
+
+EJB-- Server side component architecture
+
+Jar files will be required for the projectes
+
+JAR files-- java archive files -- jar file is zip files contains java files
+
+for conection the database need separate jar files that is configuration 
+ like for connecting sql need separate jar file
+ for mongodb need separate jar file
+jar is used for the building core java application
+
+same WAR - web archive files is used develop web base application
+
+Bill of materials -- aligning the jar file version 
+
+spring integrates all other frameworks like hibernate and struts
+
+
+
+Core features
+1.POJO--- class ---private variables ---> getter setter methods
+plain old java object
+
+2.Dependency injuction
+3.REST API
+4.MVC
+5.Security
+
+
+IOS- inversion on control container --it is container based
+AOP- Aspect oriented programming
+DAS -Data Access framework -- direct access to database
+MVC- Spring mvc framework --- it used to develop application request based 
+
+
+MVC--- Model view controller 
+design pattern
+it is loosely coupled and can modified by separate model alone or controller alone
+controller contacting model is giving input to view
+
+Rest api --- Representational state transfer Application programming interfaced
+
+http request see the input as object and http response will be xml/json 
+
+CRUD
+create   Read  update delete
+Post     Get   put    delete
+
+Spring bean
+object that is manage by the spring framework in java application
+spring beans can be configured using xml,java annotations or java code
+
+object lifecycle -- it tells about how it is born , how it behave throught it life cycle and when how it dies
+
+Bean lifecyle -- it is manage spring container
+
+@configuration declares class as full configuration class
+ class must be non final and public 
+@bean declares bean configuration inside configuration class 
+ method must be non final and non private (ie public protected or package private)
+
+
+Spring component sample---
+
+Annotations----- basically are used to provide additional information, so could be an alternative to XML and Java marker interfaces.
+Annotations----- in Java provide additional information to the compiler and JVM. An annotation is a tag representing metadata about classes, interfaces, variables, methods, or fields.
+
+spring component contains class level annotation that marks class as spring component(@component)
+constructor dependency injection is automatically done using @Autowired by the injection the constructor parameters
+
+@Autowired is an annotation used in Spring Boot to enable automatic dependency injection.
+@Autowired on constructor is optional if there is only one constructor
+
+Spring provides components stereotype to classify classes as spring component
+
+@component as general component annotation indicate that class should initialized configure and managed by the core container
+
+@Repository,@Service and @Controller as meta annotation for @Component that allows further refine components
+*meta-annotations are annotations that can be applied to other annotations
+
+Stereotype annotations are special annotations that define a class's role in a Spring application. 
+
+Bean Naming---
+Method name as bean name @Bean("ds")
+Beam injection---
+
+1.constructor injection 
+2.Field injection
+3.Setter Method injection 
+4.configuration Method injection
+
+
+constructor injection ----------
+@Qualifier("primary") when we have two constructor then we can mention the qualifier name for the injection 
+
+@primary when two constructor mention one constructor as primary then that take as primary constructor for the injection
+
+Field injection ------
+
+field allows direct injection to the field declaration without constructor or method delegetion
+
+
+Dependency injection -------------
+
+It is one type of design pattern - it is an idea for building project
+
+object graph--- dependency of the one object to other object
+
+Dependency injection is depending or injecting one class object to other class object that should be done using @Autowired-- it is used connect the component in this component will be object in the spring container components will be mentioned as @component-- it will be object in the spring container when it is mention we can autowired to depend that object
+
+it make loosly coupling of the components
+1) Avoid tight coupling
+2)@Autowired @Component @Qualifier
+3) Unit testing will be easier one
+
+when there is multiple components we can name the component like @componen("component Name")
+
+we can make dependency injection to that using @Qualifer("component Name") which should be dependent and use @Autowired should be there for the make dependency injection
+
+
+1.spring web--for web application
+2.thymeleaf-- allow frontend 
+3.Spring data JPA -- for the database connection jar files
+4.Spring boot Actuator -- for debugging
+
+<packaging> war </packaging>
+
+.java --> converts to class files
+Web Application --> converts to WAR Files
+
+It creates a singleton scope it create single when using multiple bean also
+getbean(created.class file); it create the object that mentioned in the class as the @Component method
+
+SpringApplication.run(...)
+-Sets default configuration
+-starts spring application context
+-class path scan
+
+
+Maven -- configuration tool
+
+it is software project management tool based on concept of project object model(POM). Maven can manage a project build, reporting, and documentation central piece of informat
+
+!.gives default project structure
+2.Dependencies Auto download
+3.Auto compile
+4.Server started stopping
+
+
+
+Servlet--------------- server side ulla vidunga
+
+Servlet is java file it access dynamic request with using web xml it give the response
+
+-server component
+
+static request-- there is alredy having content server ex: home button is alredy written so cliking that geting content is static request
+
+dynamic request-- there is no content we are searching like searching
+something new to the server
+
+Servlet is java file give is the response to html it is the server side java file
+
+Server contains web container and web container contains servlet
+
+xml
+web.xml --deployment descripter
+this file tells which request will there which servlet will be mentioned in the xml file example
+
+<web-app>
+	<servlet>
+		<servlet-name>aboutUs</servlet-name>
+		<servlet-class>aboutUsServlet</servler-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>aboutUs</servlet-name>
+		<url-patterns>/aboutus</url-patterns>
+	</servlet-mapping>
+</web-app>
+
+avoiding xml file by using annotation
+@WebServlet("/aboutus.html")
+
+
+disadvantage of  Servelet it overcomes
+JSP-java server pages
+
+servlet--controller
+
+
+Spring MVC-------
+Model view controller
+Working separately --speration of concerns
+
+front controller --JSP
+
+project flow
+
+
+
+Application properties:
+
+key=Value pair
+name=harish
+key=value 
+
+it is application properties
+
+
+
+
+--Using spring framework we can build enterprise levele application and web application
+
+IOC is principle and DI is design pattern
+
+
+Spring Data JPA:
+
+ORM-- object relational mapping
+object will have data
+JPA---Java persistant api
